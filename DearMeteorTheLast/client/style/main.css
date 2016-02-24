@@ -1,0 +1,22 @@
+.header{
+  background-color: #000;
+  color: #FFF;
+  padding: 1em;
+}
+
+footer{
+  background-color: #000;
+  color: #FFF;
+  padding: 1em;
+  margin-top: 65vh;
+}
+
+.login-link-text{
+  color: #FFF
+}
+
+.map-container{
+  width: 100%;
+  max-width: 100%;
+  height: 500px;
+}

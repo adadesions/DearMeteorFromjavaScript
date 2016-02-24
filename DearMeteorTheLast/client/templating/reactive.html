@@ -1,0 +1,12 @@
+<template name="reactive">
+  <h1>Welcome to Reactive Part!!</h1>
+  <button type='button' class='btn btn-lg btn-primary add-new-project'>Add new project</button>
+  <button type='button' class='btn btn-lg btn-warning update-name'>Update</button>
+  <button type='button' class='btn btn-lg btn-success all-or-some'>All or Some</button>
+  <br><br>
+  <ul>
+    {{#each getProjects}}
+      <li><b>{{name}}</b></li>
+    {{/each}}
+  </ul>
+</template>

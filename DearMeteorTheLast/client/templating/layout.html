@@ -1,0 +1,32 @@
+<template name='layout'>
+  <div class="container-fluid header">
+    <header>
+      <h2>Dear Meteor, From Javascript</h2>
+      <div class="navigator pull-left">
+        <a href="{{pathFor 'reactive'}}">
+          <button type="button" class="btn btn-lg btn-primary" >
+            Home
+          </button>
+        </a>
+        <a href="{{pathFor 'adaMaps'}}">
+          <button type="button" class="btn btn-lg btn-primary" >
+            Maps
+          </button>
+        </a>
+      </div>
+      <div class="pull-right">
+        <button type="button" class="btn-lg btn-success cuz-login">
+          {{> loginButtons align="right"}}
+        </button>
+      </div>
+    </header>
+  </div>
+
+  <div class='container'>
+    {{> yield}}
+  </div>
+
+  <footer>
+    AdaCode.io CopyRight
+  </footer>
+</template>
