@@ -1,0 +1,21 @@
+<head>
+  <title>DearMeteorProject</title>
+</head>
+
+<body>
+  {{> adacode}}
+</body>
+
+<template name="adacode">
+  <h1>Hello AdaCode.io</h1>
+  <ul>
+    {{#each getData}}
+      {{#if checkName name}}
+        <h2>Name: {{name}}, Age: {{age}}</h2>
+      {{else}}
+        <li>Name: {{name}}, Age: {{age}}</li>
+      {{/if}}
+
+    {{/each}}
+  </ul>
+</template>
