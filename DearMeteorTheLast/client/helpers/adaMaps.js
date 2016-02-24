@@ -38,11 +38,18 @@ Template.adaMaps.onCreated(function () {
         google.maps.event.addListener(marker, 'dragend', function (e) {
           Markers.update({_id: marker.id}, {$set: {lat: e.latLng.lat(), lng: e.latLng.lng()}})
         })
-
+        google.maps.event.addListener(marker, 'dblclick', function (e) {
+          Markers.remove({_id: marker.id})
+        })
         markers[doc._id] = marker
       },
       changed: function (newDoc, oldDoc) {
         markers[newDoc._id].setPosition({lat: newDoc.lat, lng: newDoc.lng})
+      },
+      removed: function (oldDoc) {
+          markers[oldDoc._id].setMap(null)
+          google.maps.event.clearInstanceListeners(markers[oldDoc]._id)
+          delete markers[oldDoc._id]
       }
     })
   })
